@@ -1,20 +1,424 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Job Seeker App</title>
+
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Business Frontpage - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-frontpage.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style media="screen">
+#nav-bar {
+    background-color: #222;
+    border-color: #080808;
+    margin-top: -30px;
+}
+</style>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+    <body class="container-fluid">
+
+      <nav id="nav-bar" class="navbar navbar-inverse">
+         <div class="container-fluid">
+
+           <div class="navbar-header">
+              <a class="navbar-brand" href="#">Job seeker</a>
+           </div>
+
+           <ul class="nav navbar-nav navbar-right">
+             <li>
+               <a href="#" class="sign-up-trigger" data-toggle="modal" data-target="#sign-up-modal"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+             </li>
+             <li>
+               <a href="#" class="sign-in-trigger" data-toggle="modal" data-target="#sign-in-modal"><span class="glyphicon glyphicon-log-in"></span> Sign In</a>
+             </li>
+             <li>
+               <a href="#" class="change-pass-trigger" data-toggle="modal" data-target="#change-pass-modal"><span class="glyphicon glyphicon-edit"></span> Change Password</a>
+             </li>
+             <li>
+               <a href="#" class="sign-out-trigger" data-toggle="modal" data-target="#sign-out-modal"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a>
+             </li>
+           </ul>
+
+          </div>
+      </nav>
+
+          <table class="table table-hover table-bordered table-responsive">
+          </table>
+
+          <!-- Create Job Button trigger modal -->
+              <button type="button" class="btn btn-primary btn-lg" id="createJob" data-toggle="modal" data-target="#create-job-modal">
+                Add new JOB
+              </button>
+
+        <!-- Update JOb Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" id="updateJob" data-toggle="modal" data-target="#update-job-modal">
+              Update JOB
+            </button>
+
+        <!-- Update JOb Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" id="updateJob" data-toggle="modal" data-target="#delete-job-modal">
+              Delete JOB
+            </button>
+
+
+
+
+
+
+
+
+
+    <!-- Modal to sign up-->
+    <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Create account</h4>
+    </div>
+    <div class="modal-body">
+
+      <form>
+            <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+              <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" name="user[id]" id="user-name">
+            </div>
+
+            <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]" id="user-email">
+            </div>
+
+            <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" placeholder="Password" name="credentials[password]" id="user-password" >
+            </div>
+
+
+            <div class="form-group">
+            <label for="exampleInputPassword1">Confirm password</label>
+            <input type="password" class="form-control" placeholder="Password" name="credentials[password_confirmation]"  id="user-password-confirm" >
+            </div>
+
+          </form>
+
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary" id="button1">Register</button>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <!-- Modal to sign in-->
+    <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Log in</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+                  <div class="form-group">
+                  <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" name="user[id]" id="user-name">
+                  </div>
+
+                  <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]" id="user-email">
+                  </div>
+
+                  <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" placeholder="Password" name="credentials[password]" id="user-password" >
+                  </div>
+                </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Log in</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal to change password-->
+    <div class="modal fade" id="change-pass-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Change password</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+                  <div class="form-group">
+                  <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" name="user[id]" id="user-name">
+                  </div>
+
+
+                  <div class="form-group">
+                  <label for="exampleInputPassword1">Old Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="passwords[old]" >
+                  </div>
+
+                  <div class="form-group">
+                  <label for="exampleInputPassword1">New Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="passwords[new]">
+                  </div>
+                </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="button3" class="btn btn-primary">Change password</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal for sign out-->
+    <div class="modal fade" id="sign-out-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Sign out</h4>
+          </div>
+          <div class="modal-body">
+            <p> You have signed out!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal to create a job -->
+    <div class="modal fade" id="create-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Add new JOB</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-block " id="create-job">
+
+                  <div class="form-group">
+                    <legend>Position NAME</legend>
+                  <div class="form-group">
+                  <input type="text" class="form-control" name="job[position_name]" placeholder="Position Name">
+                  </div>
+
+                  <div class="form-group">
+                    <legend>Company NAME</legend>
+                  <input type="text" class="form-control" name="job[company_name]" placeholder="Comapny Name">
+                  </div>
+
+                  <div class="form-group">
+                    <legend>Company URL</legend>
+                  <input type="text" class="form-control" name="job[company_url]" placeholder="Comapny URL">
+                  </div>
+
+                  <div class="form-group">
+                    <legend>Requirements</legend>
+                    <textarea class="form-control" id="exampleTextarea" name="job[requirements]" placeholder="Requirements" rows="5"></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <legend>Salary</legend>
+                  <input type="text" class="form-control" name="job[salary]" placeholder="Salary">
+                  </div>
+
+                  <div class="form-group">
+                    <legend>Application URL</legend>
+                  <input type="text" class="form-control" name="job[application_url]" placeholder="Application URL">
+                  </div>
+
+                  <div class="form-group">
+                    <legend>Notes</legend>
+                    <textarea class="form-control" id="exampleTextarea" name="job[notes]" placeholder="Notes" rows="5"></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <legend>Submitted</legend>
+                  <input type="text" class="form-control" name="job[submit]" placeholder="Submitted">
+                  </div>
+
+         </div>
+         <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Add new JOB</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- Modal to update a job -->
+      <div class="modal fade" id="update-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Update JOB</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-block " id="update-job">
+
+                <div class="form-group">
+                  <legend>ID</legend>
+                <input type="text" class="form-control" name="job[id]" placeholder="Submitted">
+                </div>
+
+                <div class="form-group">
+                  <legend>Notes</legend>
+                  <textarea class="form-control" id="exampleTextarea" name="job[notes]" placeholder="Notes" rows="5"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <legend>Submitted</legend>
+                <input type="text" class="form-control" name="job[submit]" placeholder="Submitted">
+                </div>
+
+                 <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-primary">Update JOB</button>
+                     </div>
+                   </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+
+           <!-- Delete Contact Modal -->
+           <div class="modal fade" id="delete-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+             <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   <h4 class="modal-title" id="myModalLabel">Are you sure you want to delele this job?</h4>
+                 </div>
+                 <div class="modal-body">
+                       <div class="form-group">
+
+                         <div class="form-group">
+                           <legend>ID</legend>
+                         <input type="text" class="form-control" name="job[id]" placeholder="Submitted">
+                         </div>
+
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-warning delete-job-btn">Delete JOB</button>
+                 </div>
+               </div>
+             </div>
+           </div>
+           </div>
+
+
+
+
+
+        <!-- Image Background Page Header -->
+        <!-- Note: The background image is set within the business-casual.css file. -->
+        <header class="business-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <br>
+
+
+
+
+
+        <!-- Page Content -->
+        <div class="container">
+
+          <div class="row">
+          <div class="col-sm-4">
+              <img class="img-square img-responsive img-center" width="300px" height="300px" src="http://i.imgur.com/inpGl4E.png" alt="">
+              <h2>Marketing Box #1</h2>
+              <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+          </div>
+          <div class="col-sm-4">
+              <img class="img-square img-responsive img-center" width="300px" height="300px" src="http://i.imgur.com/qqnj5wI.png" alt="">
+              <h2>Marketing Box #2</h2>
+              <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+          </div>
+          <div class="col-sm-4">
+              <img class="img-square img-responsive img-center" width="300px" height="250px" src="http://i.imgur.com/2G6XD0s.png" alt="">
+              <h2>Marketing Box #3</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+          </div>
+      </div>
+      <!-- /.row -->
+
+            <hr>
+
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Copyright &copy; Natasa Peic WDI 13</p>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </footer>
+
+        </div>
+        <!-- /.container -->
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
     </body>
+
+
 </html>
