@@ -185,14 +185,19 @@ textarea {
 optgroup {
   font-weight: bold;
 }
+
 table {
+  padding: 0;
   border-spacing: 0;
   border-collapse: collapse;
 }
+
 td,
 th {
   padding: 0;
 }
+
+
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,
@@ -256,14 +261,18 @@ th {
   }
   .table {
     border-collapse: collapse !important;
+
   }
   .table td,
   .table th {
     background-color: #fff !important;
+    padding: 20px;
+
   }
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
+    padding: 20px;
   }
 }
 @font-face {
@@ -2256,6 +2265,7 @@ pre code {
 }
 table {
   background-color: transparent;
+  padding: 20px;
 }
 caption {
   padding-top: 8px;
@@ -2277,7 +2287,7 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  padding: 8px;
+  padding: 20px;
   line-height: 1.42857143;
   vertical-align: top;
   border-top: 1px solid #ddd;
@@ -2293,6 +2303,8 @@ th {
 .table > colgroup + thead > tr:first-child > td,
 .table > thead:first-child > tr:first-child > td {
   border-top: 0;
+  padding: 20px;
+
 }
 .table > tbody + tbody {
   border-top: 2px solid #ddd;
@@ -2306,7 +2318,7 @@ th {
 .table-condensed > thead > tr > td,
 .table-condensed > tbody > tr > td,
 .table-condensed > tfoot > tr > td {
-  padding: 5px;
+  padding: 20px;
 }
 .table-bordered {
   border: 1px solid #ddd;
@@ -2318,6 +2330,7 @@ th {
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
   border: 1px solid #ddd;
+  padding: 20px;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -2339,6 +2352,7 @@ table th[class*="col-"] {
   position: static;
   display: table-cell;
   float: none;
+  padding: 20px;
 }
 .table > thead > tr > td.active,
 .table > tbody > tr > td.active,
@@ -2353,6 +2367,7 @@ table th[class*="col-"] {
 .table > tbody > tr.active > th,
 .table > tfoot > tr.active > th {
   background-color: #f5f5f5;
+  padding: 20px;
 }
 .table-hover > tbody > tr > td.active:hover,
 .table-hover > tbody > tr > th.active:hover,
@@ -2360,6 +2375,7 @@ table th[class*="col-"] {
 .table-hover > tbody > tr:hover > .active,
 .table-hover > tbody > tr.active:hover > th {
   background-color: #e8e8e8;
+  padding: 20px;
 }
 .table > thead > tr > td.success,
 .table > tbody > tr > td.success,
@@ -2374,6 +2390,7 @@ table th[class*="col-"] {
 .table > tbody > tr.success > th,
 .table > tfoot > tr.success > th {
   background-color: #dff0d8;
+  padding: 20px;
 }
 .table-hover > tbody > tr > td.success:hover,
 .table-hover > tbody > tr > th.success:hover,
@@ -2381,6 +2398,7 @@ table th[class*="col-"] {
 .table-hover > tbody > tr:hover > .success,
 .table-hover > tbody > tr.success:hover > th {
   background-color: #d0e9c6;
+  padding: 20px;
 }
 .table > thead > tr > td.info,
 .table > tbody > tr > td.info,
@@ -2395,6 +2413,7 @@ table th[class*="col-"] {
 .table > tbody > tr.info > th,
 .table > tfoot > tr.info > th {
   background-color: #d9edf7;
+  padding: 20px;
 }
 .table-hover > tbody > tr > td.info:hover,
 .table-hover > tbody > tr > th.info:hover,
@@ -2402,6 +2421,7 @@ table th[class*="col-"] {
 .table-hover > tbody > tr:hover > .info,
 .table-hover > tbody > tr.info:hover > th {
   background-color: #c4e3f3;
+  padding: 20px;
 }
 .table > thead > tr > td.warning,
 .table > tbody > tr > td.warning,
@@ -4335,6 +4355,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   line-height: 20px;
 }
 @media (max-width: 767px) {
+
+
   .navbar-nav .open .dropdown-menu {
     position: static;
     float: none;
@@ -4432,6 +4454,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 @media (max-width: 767px) {
+  img {
+    display: none;
+  }
   .navbar-form .form-group {
     margin-bottom: 5px;
   }
@@ -6774,6 +6799,12 @@ button.close {
   }
 }
 
+
+td, th {
+    padding: 20px;
+    border: 1px solid black;
+    text-align: center;
+}
 
 
 /*# sourceMappingURL=bootstrap.css.map */

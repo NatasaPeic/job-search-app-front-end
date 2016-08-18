@@ -9,13 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Business Frontpage - Start Bootstrap Template</title>
+    <title>Project2</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/business-frontpage.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,11 +27,21 @@
     <![endif]-->
 
 <style media="screen">
-#nav-bar {
-    background-color: #222;
-    border-color: #080808;
-    margin-top: -30px;
+
+td, th, table {
+    border: 1px solid black;
+    text-align: center;
 }
+
+.table-top-row {
+font-weight: bold;
+
+}
+
+.content{
+  padding: 20px;
+}
+
 </style>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
@@ -38,194 +50,188 @@
 
     <body class="container-fluid">
 
-      <nav id="nav-bar" class="navbar navbar-inverse">
-         <div class="container-fluid">
-
-           <div class="navbar-header">
-              <a class="navbar-brand" href="#">Job seeker</a>
-           </div>
-
-           <ul class="nav navbar-nav navbar-right">
-             <li>
-               <a href="#" class="sign-up-trigger" data-toggle="modal" data-target="#sign-up-modal"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-             </li>
-             <li>
-               <a href="#" class="sign-in-trigger" data-toggle="modal" data-target="#sign-in-modal"><span class="glyphicon glyphicon-log-in"></span> Sign In</a>
-             </li>
-             <li>
-               <a href="#" class="change-pass-trigger" data-toggle="modal" data-target="#change-pass-modal"><span class="glyphicon glyphicon-edit"></span> Change Password</a>
-             </li>
-             <li>
-               <a href="#" class="sign-out-trigger" data-toggle="modal" data-target="#sign-out-modal"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a>
-             </li>
-           </ul>
-
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">Job seeker app</a>
           </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a id="sign-up-modal-link" href="#">Sign Up</a></li>
+
+              <li><a class="sign-in-trigger" id="sign-in-modal-link" href="#">Sign In</a></li>
+
+              <li><a class="change-password-trigger" id="change-password-modal-link" href="#">Change Password</a></li>
+
+              <li><a class="sign-out-trigger" id="sign-out-modal-link" href="#">Sign Out</a></li>
+              <li><a id="create-job-modal-link" href="#">Create job</a></li>
+
+
+              <!-- <li><a id="show-jobs-modal-link" href="#">Show jobs</a></li> -->
+
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
       </nav>
 
-          <table class="table table-hover table-bordered table-responsive">
-          </table>
+      <!--  SIGN-UP MODAL -->
+           <div class="container">
+             <div id="sign-up-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+               <div class="modal-dialog modal-sm" role="document">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                     <h4 class="modal-title">Sign Up</h4>
+                   </div>
+                   <div class="modal-body">
+                     <form id="sign-up">
+                       <fieldset>
+                         <div class="form-group">
+             <label for="exampleInputEmail1">Email address</label>
+             <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]" id="sign-up-email">
+             </div>
 
-          <!-- Create Job Button trigger modal -->
-              <button type="button" class="btn btn-primary btn-lg" id="createJob" data-toggle="modal" data-target="#create-job-modal">
-                Add new JOB
-              </button>
-
-        <!-- Update JOb Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" id="updateJob" data-toggle="modal" data-target="#update-job-modal">
-              Update JOB
-            </button>
-
-        <!-- Update JOb Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" id="updateJob" data-toggle="modal" data-target="#delete-job-modal">
-              Delete JOB
-            </button>
-
-
-
-
-
-
+             <div class="form-group">
+             <label for="exampleInputPassword1">Password</label>
+             <input type="password" class="form-control" placeholder="Password" name="credentials[password]" id="sign-up-password" >
+             </div>
 
 
-
-    <!-- Modal to sign up-->
-    <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-    <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title" id="myModalLabel">Create account</h4>
-    </div>
-    <div class="modal-body">
-
-      <form>
-            <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
-              <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" name="user[id]" id="user-name">
-            </div>
-
-            <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]" id="user-email">
-            </div>
-
-            <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" placeholder="Password" name="credentials[password]" id="user-password" >
-            </div>
+             <div class="form-group">
+             <label for="exampleInputPassword1">Confirm password</label>
+             <input type="password" class="form-control" placeholder="Password" name="credentials[password_confirmation]"  id="user-password-confirm" >
+             </div>
 
 
-            <div class="form-group">
-            <label for="exampleInputPassword1">Confirm password</label>
-            <input type="password" class="form-control" placeholder="Password" name="credentials[password_confirmation]"  id="user-password-confirm" >
-            </div>
-
-          </form>
-
-
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary" id="button1">Register</button>
-    </div>
-    </div>
-    </div>
-    </div>
+                         <button type="submit" id="sign-up1" class="btn btn-primary sign-up-submit" name="submit" >Sign Up</button>
+                       </fieldset>
+                     </form>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <!-- END SIGN-UP MODAL -->
 
 
 
-    <!-- Modal to sign in-->
-    <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Log in</h4>
-          </div>
-          <div class="modal-body">
-            <form>
-                  <div class="form-group">
-                  <label for="exampleInputEmail1">Name</label>
-                    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" name="user[id]" id="user-name">
-                  </div>
-
-                  <div class="form-group">
+           <!--  SIGN-IN MODAL -->
+                <div class="container">
+                  <div id="sign-in-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                    <div class="modal-dialog modal-sm" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">Sign In</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form id="sign-in">
+                            <fieldset>
+                              <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]" id="user-email">
+                  <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]" id="sign-up-email">
                   </div>
 
                   <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" placeholder="Password" name="credentials[password]" id="user-password" >
-                  </div>
-                </form>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Log in</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Modal to change password-->
-    <div class="modal fade" id="change-pass-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Change password</h4>
-          </div>
-          <div class="modal-body">
-            <form>
-                  <div class="form-group">
-                  <label for="exampleInputEmail1">Name</label>
-                    <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" name="user[id]" id="user-name">
+                  <input type="password" class="form-control" placeholder="Password" name="credentials[password]" id="sign-up-password" >
                   </div>
 
-
-                  <div class="form-group">
-                  <label for="exampleInputPassword1">Old Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="passwords[old]" >
+                              <button type="submit" id="sign-in1" class="btn btn-primary sign-up-submit" name="submit" >Sign In</button>
+                            </fieldset>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-
-                  <div class="form-group">
-                  <label for="exampleInputPassword1">New Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="passwords[new]">
-                  </div>
-                </form>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="button3" class="btn btn-primary">Change password</button>
-          </div>
-        </div>
-      </div>
-    </div>
+                </div>
+                <!-- END SIGN-UP MODAL -->
 
 
-    <!-- Modal for sign out-->
-    <div class="modal fade" id="sign-out-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Sign out</h4>
-          </div>
-          <div class="modal-body">
-            <p> You have signed out!</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <!--  CHANGE PASSWORD MODAL -->
+                     <div class="container">
+                       <div id="change-password-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                         <div class="modal-dialog modal-sm" role="document">
+                           <div class="modal-content">
+                             <div class="modal-header">
+                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                               <h4 class="modal-title">Change password</h4>
+                             </div>
+                             <div class="modal-body">
+                               <form id="change-password">
+                                 <fieldset>
+                                   <div class="form-group">
 
-          </div>
-        </div>
-      </div>
-    </div>
+                                        <div class="form-group">
+                                        <label for="exampleInputPassword1">Old Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="passwords[old]" >
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="exampleInputPassword1">New Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="passwords[new]">
+                                        </div>
+
+                                   <button type="submit" id="change-password1" class="btn btn-primary sign-up-submit" name="submit" >Change password</button>
+                                 </fieldset>
+                               </form>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                     <!-- END SIGN-UP MODAL -->
+
+
+
+
+                     <!--  SIGN OUT MODAL -->
+                          <div class="container">
+                            <div id="sign-out-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                              <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Sign out</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form id="sign-out">
+                                      <fieldset>
+                                        <div class="form-group">
+
+                                          <div class="modal-body">
+                                             <p>Are you sure you want to sign out?</p>
+                                           </div>
+
+                                        <button type="submit" id="sign-out1" class="btn btn-primary sign-up-submit" name="submit" >Sign out</button>
+                                      </fieldset>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- END SIGN-OUT MODAL -->
+
+
+
+
+
+          <table id="table" class="table table-hover table-bordered table-responsive">
+          </table>
+
+
+
+
 
 
     <!-- Modal to create a job -->
@@ -240,19 +246,19 @@
             <form class="form-block " id="create-job">
 
                   <div class="form-group">
+                    <legend>Company NAME</legend>
+                  <input type="text" class="form-control" name="job[company_name]" placeholder="Comapny Name">
+                  </div>
+
+                  <div class="form-group">
                     <legend>Position NAME</legend>
                   <div class="form-group">
                   <input type="text" class="form-control" name="job[position_name]" placeholder="Position Name">
                   </div>
 
                   <div class="form-group">
-                    <legend>Company NAME</legend>
-                  <input type="text" class="form-control" name="job[company_name]" placeholder="Comapny Name">
-                  </div>
-
-                  <div class="form-group">
                     <legend>Company URL</legend>
-                  <input type="text" class="form-control" name="job[company_url]" placeholder="Comapny URL">
+                  <input type="url" class="form-control" name="job[company_url]" placeholder="Comapny URL">
                   </div>
 
                   <div class="form-group">
@@ -267,7 +273,7 @@
 
                   <div class="form-group">
                     <legend>Application URL</legend>
-                  <input type="text" class="form-control" name="job[application_url]" placeholder="Application URL">
+                  <input type="url" class="form-control" name="job[application_url]" placeholder="Application URL">
                   </div>
 
                   <div class="form-group">
@@ -276,14 +282,21 @@
                   </div>
 
                   <div class="form-group">
-                    <legend>Submitted</legend>
-                  <input type="text" class="form-control" name="job[submit]" placeholder="Submitted">
+                    <legend>Applied</legend>
+                  <input type="text" class="form-control" name="job[applied]" placeholder="Submitted">
                   </div>
+
+                  <div class="form-group">
+                    <legend>Contact</legend>
+                  <input type="text" class="form-control" name="job[contact]" placeholder="Submitted">
+                  </div>
+
+
 
          </div>
          <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Add new JOB</button>
+                  <button type="submit" id="createJob1" class="btn btn-primary">Add new JOB</button>
                 </div>
               </form>
             </div>
@@ -305,10 +318,7 @@
             <div class="modal-body">
               <form class="form-block " id="update-job">
 
-                <div class="form-group">
-                  <legend>ID</legend>
-                <input type="text" class="form-control" name="job[id]" placeholder="Submitted">
-                </div>
+
 
                 <div class="form-group">
                   <legend>Notes</legend>
@@ -317,12 +327,12 @@
 
                 <div class="form-group">
                   <legend>Submitted</legend>
-                <input type="text" class="form-control" name="job[submit]" placeholder="Submitted">
+                <input type="text" class="form-control" name="job[applied]" placeholder="Submitted">
                 </div>
 
                  <div class="modal-footer">
                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                       <button type="submit" class="btn btn-primary">Update JOB</button>
+                       <button type="submit" class="btn btn-primary update-job-btn">Update JOB</button>
                      </div>
                    </form>
                  </div>
@@ -331,7 +341,7 @@
            </div>
 
 
-           <!-- Delete Contact Modal -->
+           <!-- Delete Job Modal -->
            <div class="modal fade" id="delete-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
              <div class="modal-dialog" role="document">
                <div class="modal-content">
@@ -342,13 +352,7 @@
                  <div class="modal-body">
                        <div class="form-group">
 
-                         <div class="form-group">
-                           <legend>ID</legend>
-                         <input type="text" class="form-control" name="job[id]" placeholder="Submitted">
-                         </div>
-
-                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                       <button type="submit" class="btn btn-warning delete-job-btn">Delete JOB</button>
+                       <button type="submit" data-dismiss="modal" class="btn btn-warning delete-job-btn">Delete JOB</button>
                  </div>
                </div>
              </div>
@@ -381,6 +385,7 @@
           <div class="row">
           <div class="col-sm-4">
               <img class="img-square img-responsive img-center" width="300px" height="300px" src="http://i.imgur.com/inpGl4E.png" alt="">
+              <br>
               <h2>Marketing Box #1</h2>
               <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
           </div>
@@ -417,6 +422,9 @@
 
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
+
+        <div class="content">
+        </div>
 
     </body>
 
