@@ -9,16 +9,21 @@ body {
 }
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
-td, th {
-    border: 1px solid black;
+td, th{
+    border: 2px solid  #595959;
     text-align: center;
 }
 
+tr {
+  text-align: center;
+}
 
+table {
+  border-radius: 10px;
+}
 
 .table-top-row {
 font-weight: bold;
-
 }
 
 .content{

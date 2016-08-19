@@ -78,7 +78,7 @@ const failureSignIn = () => {
 
   $('#wrong-password').modal('hide');
   $(".modal-backdrop").hide();
-  $('#sign-up-modal-link').hide();
+  $('#sign-up-modal-link').show();
   $('#sign-in-modal-link').show();
 });
 
@@ -109,6 +109,9 @@ console.log("Sign up was successful!");
 
 $('#sign-up-job-modal').modal('hide');
 $(".modal-backdrop").hide();
+
+$('#sign-in-modal-link').show();
+$('#sign-up-modal-link').hide();
 
 $('#sign-up' ).each(function(){
 this.reset();
