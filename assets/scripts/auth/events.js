@@ -17,8 +17,7 @@ const onSignUp = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
 
-
-  api.signUp(data)
+   api.signUp(data)
    .done(ui.onSuccess)
    .fail(ui.failure);
 };
@@ -99,15 +98,11 @@ const closeModalSignOut = function closeModalSignOut() {
 const onSignOut = function (event) {
 
     event.preventDefault();
+
     api.signOut()
    .done(ui.signOutSuccess)
    .fail(ui.failure);
 
-   $('#createJob, #updateJob, #deleteJob, #change-password-modal-link, #sign-out-modal-link, .content ').hide();
-   $('.business-header, .img-square, h2, p, hr').show();
-
-   $('#sign-up-modal-link, #sign-in-modal-link ').show();
-   $('.business-header, .img-square, h2, p, hr, #sign-up-modal-link, #sign-in-modal-link').show();
 
 };
 
@@ -165,6 +160,9 @@ const addHandlers = () => {
 
     $("#sign-out1").on('click', function () {
           $('#table, #create-job-modal-link').hide();
+
+            location.reload();
+
     });
 
     $('#create-job-modal-link').on('click', showCreateJobModal);
@@ -206,7 +204,13 @@ $(".delete-job-btn").attr("data-job-id", id);
 });
 
 
+
+
 };
+
+
+
+
 
 
 

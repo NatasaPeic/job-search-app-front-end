@@ -14,7 +14,21 @@ body {
 }
 
 /*Added styles*/
+td, th {
+    border: 1px solid black;
+    text-align: center;
+}
 
+
+
+.table-top-row {
+font-weight: bold;
+
+}
+
+.content{
+  padding: 20px;
+}
 
 
 

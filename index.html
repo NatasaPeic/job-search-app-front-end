@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Project2</title>
+    <title>JobKeeper</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +17,10 @@
     <!-- Custom CSS -->
     <link href="css/business-frontpage.css" rel="stylesheet">
     <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- FAVICON -->
+
+    <link rel="icon" href="http://i.imgur.com/5LKtdmr.png">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,23 +30,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<style media="screen">
 
-td, th, table {
-    border: 1px solid black;
-    text-align: center;
-}
 
-.table-top-row {
-font-weight: bold;
-
-}
-
-.content{
-  padding: 20px;
-}
-
-</style>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
@@ -60,12 +49,13 @@ font-weight: bold;
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">Job seeker app</a>
+            <a class="navbar-brand"><b>Job Search Helper</b></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+
               <li><a id="sign-up-modal-link" href="#">Sign Up</a></li>
 
               <li><a class="sign-in-trigger" id="sign-in-modal-link" href="#">Sign In</a></li>
@@ -73,10 +63,8 @@ font-weight: bold;
               <li><a class="change-password-trigger" id="change-password-modal-link" href="#">Change Password</a></li>
 
               <li><a class="sign-out-trigger" id="sign-out-modal-link" href="#">Sign Out</a></li>
+
               <li><a id="create-job-modal-link" href="#">Create job</a></li>
-
-
-              <!-- <li><a id="show-jobs-modal-link" href="#">Show jobs</a></li> -->
 
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -90,7 +78,7 @@ font-weight: bold;
                  <div class="modal-content">
                    <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                     <h4 class="modal-title">Sign Up</h4>
+                     <h4 class="modal-title">Sign up</h4>
                    </div>
                    <div class="modal-body">
                      <form id="sign-up">
@@ -110,6 +98,10 @@ font-weight: bold;
              <label for="exampleInputPassword1">Confirm password</label>
              <input type="password" class="form-control" placeholder="Password" name="credentials[password_confirmation]"  id="user-password-confirm" >
              </div>
+
+             <div class="form-group">
+            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#sign-in-modal" class="register-opp">Already have an account?</a>
+          </div>
 
 
                          <button type="submit" id="sign-up1" class="btn btn-primary sign-up-submit" name="submit" >Sign Up</button>
@@ -201,16 +193,13 @@ font-weight: bold;
                                 <div class="modal-content">
                                   <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title">Sign out</h4>
+                                    <h4 class="modal-title">Are you sure you want to sign out?</h4>
                                   </div>
                                   <div class="modal-body">
                                     <form id="sign-out">
                                       <fieldset>
                                         <div class="form-group">
 
-                                          <div class="modal-body">
-                                             <p>Are you sure you want to sign out?</p>
-                                           </div>
 
                                         <button type="submit" id="sign-out1" class="btn btn-primary sign-up-submit" name="submit" >Sign out</button>
                                       </fieldset>
@@ -221,6 +210,51 @@ font-weight: bold;
                             </div>
                           </div>
                           <!-- END SIGN-OUT MODAL -->
+
+
+                          <!-- MODAL FOR WRONG PASSWORD -->
+
+                          <div class="modal fade" id="wrong-password" accesskey=""tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                      <h4 class="modal-title"></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>Wrong email and password combination. Please try again.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" id="modalClose" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                              </div><!-- /.modal -->
+
+                              <!-- END MODAL FOR WRONG PASSWORD -->
+
+
+
+                              <!-- MODAL FOR TAKEN EMAIL AND/OR PASSWORD -->
+
+                              <div class="modal fade" id="taken-password" accesskey=""tabindex="-1" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h4 class="modal-title"></h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <p>This email is already taken. Please try again.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" id="modalClose1" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                  </div><!-- /.modal -->
+
+                                  <!-- END MODAL FOR WRONG PASSWORD -->
 
 
 
@@ -258,8 +292,9 @@ font-weight: bold;
 
                   <div class="form-group">
                     <legend>Company URL</legend>
-                  <input type="url" class="form-control" name="job[company_url]" placeholder="Comapny URL">
+                  <input type="text" class="form-control" name="job[company_url]" placeholder="Comapny URL">
                   </div>
+
 
                   <div class="form-group">
                     <legend>Requirements</legend>
@@ -273,7 +308,7 @@ font-weight: bold;
 
                   <div class="form-group">
                     <legend>Application URL</legend>
-                  <input type="url" class="form-control" name="job[application_url]" placeholder="Application URL">
+                  <input type="text" class="form-control" name="job[application_url]" placeholder="Application URL">
                   </div>
 
                   <div class="form-group">

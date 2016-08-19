@@ -2,27 +2,29 @@
 
 const app = require('../app');
 const api = require('./api');
-// const ui = require('./ui');
 
 
 
 
-// changed Password
+// Change password
 const success = (data) => {
   console.log(data);
   console.log("Password was succesfully changed!");
   $( '#change-password' ).each(function(){
     this.reset();
   });
-
 };
 
 
+// Append jobs from the back end using handlebars
 let displayJobs = function(jobs){
   // debugger;
   let jobListingTemplate = require('../template/jobs.handlebars');
+
+  // remove all the content table, so you don't get your backend info twice
    $('.table').empty();
-  $('.table').append(jobListingTemplate({
+  // then append it all
+  $('.table').html(jobListingTemplate({
 
   // debugger;
     jobs
@@ -34,27 +36,67 @@ let displayJobs = function(jobs){
 
 
 const showJobsSuccess = (data) => {
+
   app.jobs = data.jobs;
-  // app.contacts.forEach(formatDate);
+
   displayJobs(data);
   console.log(app.jobs);
 };
 
+
+
 // Error message
 const failure = (error) => {
   console.error(error);
+  $('#taken-password').modal('show');
+
+
+  $('#modalClose1').on('click', function () {
+
+
+  $('#taken-password').modal('hide');
+  $(".modal-backdrop").hide();
+  $('#sign-up-modal-link').show();
+  $('#sign-in-modal-link').hide();
+});
+
+$('#sign-up' ).each(function(){
+this.reset();
+});
+
 };
 
 
 const failureSignIn = () => {
   console.log("Wrong Password!");
-  $('#createJob, #updateJob, #deleteJob, #change-password-modal-link, #sign-out-modal-link, .content, #create-job-modal-link ').hide();
+
+  $('#wrong-password').modal('show');
+
+
+  $('#modalClose').on('click', function () {
+
+
+  $('#wrong-password').modal('hide');
+  $(".modal-backdrop").hide();
+  $('#sign-up-modal-link').hide();
+  $('#sign-in-modal-link').show();
+});
+
+
+  $('#createJob, #updateJob, #deleteJob, #change-password-modal-link, #sign-out-modal-link, .content, #create-job-modal-link, #sign-in-modal-link').hide();
   $('.business-header, .img-square, h2, p, hr').show();
 
   $('#sign-up-modal-link, #sign-in-modal-link ').show();
-  $('.business-header, .img-square, h2, p, hr, #sign-up-modal-link, #sign-in-modal-link').show();
+  $('.business-header, .img-square, h2, p, hr, #sign-in-modal-link').show();
+
+
 
   // alert("Wrong passowrd");
+  $('#sign-in' ).each(function(){
+  this.reset();
+
+
+});
 };
 
 
@@ -63,8 +105,15 @@ const failureSignIn = () => {
 const onSuccess = function (data) {
   app.user = data.user;
 console.log(data);
-console.log(app.user);
 console.log("Sign up was successful!");
+
+$('#sign-up-job-modal').modal('hide');
+$(".modal-backdrop").hide();
+
+$('#sign-up' ).each(function(){
+this.reset();
+});
+
 };
 
 
@@ -73,8 +122,19 @@ console.log("Sign up was successful!");
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app);
-  console.log("Sign in was successful!");
+  console.log("User is signed in!");
 
+
+
+    $('#sign-in-job-modal').modal('hide');
+    $(".modal-backdrop").hide();
+
+    $('#sign-in-modal-link').hide();
+
+
+
+
+  // reset form, so you don't get the same date next time you want to sign in
   $('#sign-in' ).each(function(){
   this.reset();
 });
@@ -86,9 +146,18 @@ const signInSuccess = (data) => {
 
 // Sign out
 const signOutSuccess = () => {
-  // debugger;
-  console.log('You sign out succesfully!');
+
+  // $('.table').html('');
+  console.log('You signed out succesfully!');
   delete app.user;
+
+
+
+  $('#createJob, #updateJob, #deleteJob, #change-password-modal-link, #sign-out-modal-link, .content ').hide();
+  $('.business-header, .img-square, h2, p, hr').show();
+
+  $('#sign-up-modal-link, #sign-in-modal-link ').show();
+  $('.business-header, .img-square, h2, p, hr, #sign-up-modal-link, #sign-in-modal-link').show();
 
 
 };
@@ -101,8 +170,10 @@ const signOutSuccess = () => {
 const createJobSuccess = (data) => {
   console.log(data);
   console.log("Job is created!");
-  // $('#create-job-modal').modal('hide');
-  // $(".modal-backdrop").hide();
+
+  $('#create-job-modal').modal('hide');
+  $(".modal-backdrop").hide();
+
   $( '#create-job' ).each(function(){
     this.reset();
   });
@@ -116,9 +187,9 @@ const createJobSuccess = (data) => {
 const updateJobSuccess = (data) => {
   console.log(data);
   console.log("Job was updated!");
-  ///need to render contacts table because of async -- crazy
-  // $('#update-job-modal').modal('hide');
-  // $(".modal-backdrop").hide();
+
+
+
   $( '#update-job' ).each(function(){
     this.reset();
   });
@@ -131,8 +202,7 @@ const deleteJobSuccess = (data) => {
   console.log(data);
   console.log("Job is deleted!");
   displayJobs();
-  // $('#delete-job-modal').modal('hide');
-  // $(".modal-backdrop").hide();
+
   api.getJobs(showJobsSuccess, failure);
 };
 

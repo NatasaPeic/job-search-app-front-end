@@ -11,6 +11,7 @@ const signIn = (data) => $.ajax({
 });
 
 
+
 const changePassword = (data) => $.ajax({
   url: app.api + '/change-password/' + app.user.id,
   method: 'PATCH',
