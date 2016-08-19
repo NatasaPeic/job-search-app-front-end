@@ -6,8 +6,6 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 
 const api = require('./api');
 const ui = require('./ui');
-// const jobAPI = require('./job_api.js');
-// const jobUI = require('./job_ui.js');
 
 
 
@@ -170,7 +168,7 @@ const addHandlers = () => {
     $('#createJob1').on('click', closeCreateJobModal);
 
 
-
+    // triggers event on submit, submit (handler)
     //updates the specific job once a submission event occurs
   $('#update-job').on('submit', function (event) {
     event.preventDefault();
@@ -196,7 +194,7 @@ $('.delete-job-btn').on('click', function (event) {
    api.deleteJob(ui.deleteJobSuccess, ui.failure, id);
  });
 
-//adds a contact id to the submit button
+//adds a job id to the submit button
 $('.table').on('click', '.delete-job', function(event){
 event.preventDefault();
 let id = $(event.target).attr("data-job-id");
@@ -204,14 +202,7 @@ $(".delete-job-btn").attr("data-job-id", id);
 });
 
 
-
-
 };
-
-
-
-
-
 
 
 
