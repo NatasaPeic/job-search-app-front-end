@@ -67,6 +67,7 @@
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
             <ul class="nav navbar-nav navbar-right">
 
               <li><a id="sign-up-modal-link" href="#">Sign Up</a></li>
@@ -78,6 +79,12 @@
               <li><a class="sign-out-trigger" id="sign-out-modal-link" href="#">Sign Out</a></li>
 
               <li><a id="create-job-modal-link" href="#">Create job</a></li>
+
+              <li><a id="update-job-modal-link" href="#">Update job</a></li>
+
+              <li><a id="c-job-modal-link" href="#">Delete job</a></li>
+
+
 
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -120,9 +127,10 @@
             </br>
 
 
-                         <button type="submit" id="sign-up1" class="btn btn-primary sign-up-submit" name="submit" >Sign Up</button>
+                         <button type="submit" id="sign-up1" class="btn btn-success sign-up-submit" name="submit" >Sign Up</button>
                        </fieldset>
                      </form>
+
                    </div>
                  </div>
                </div>
@@ -154,7 +162,7 @@
                   <input type="password" class="form-control" placeholder="Password" name="credentials[password]" id="sign-up-password" >
                   </div>
 
-                              <button type="submit" id="sign-in1" class="btn btn-primary sign-up-submit" name="submit" >Sign In</button>
+                              <button type="submit" id="sign-in1" class="btn btn-success sign-up-submit" name="submit" >Sign In</button>
                             </fieldset>
                           </form>
                         </div>
@@ -188,8 +196,9 @@
                                         <label for="exampleInputPassword1">New Password</label>
                                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="passwords[new]">
                                         </div>
+                                      </div>
 
-                                   <button type="submit" id="change-password1" class="btn btn-primary sign-up-submit" name="submit" >Change password</button>
+                                   <button type="submit" id="change-password1" class="btn btn-success sign-up-submit" name="submit" >Change password</button>
                                  </fieldset>
                                </form>
                              </div>
@@ -216,8 +225,9 @@
                                       <fieldset>
                                         <div class="form-group">
 
+                                      <button type="submit" id="sign-out1" class="btn btn-success sign-up-submit" name="submit" >Sign out</button>
+                                    </div>
 
-                                        <button type="submit" id="sign-out1" class="btn btn-primary sign-up-submit" name="submit" >Sign out</button>
                                       </fieldset>
                                     </form>
                                   </div>
@@ -347,7 +357,7 @@
          </div>
          <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" id="createJob1" class="btn btn-primary">Add new JOB</button>
+                  <button type="submit" id="createJob1" class="btn btn-success">Add new JOB</button>
                 </div>
               </form>
             </div>
@@ -358,8 +368,97 @@
 
 
 
-      <!-- Modal to update a job -->
+
+
+      <!-- Modal to update a job by id-->
       <div class="modal fade" id="update-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Update JOB</h4>
+            </div>
+            <div class="modal-body">
+              <form class="form-block " id="update-job">
+
+                    <div id="div-id" class="form-group">
+                      <legend>ID</legend>
+                    <input type="text" class="form-control" id="update-jobID" name="job[id]" placeholder="Id">
+                    </div>
+
+                    <div class="form-group">
+                      <legend>Notes</legend>
+                      <textarea class="form-control" id="exampleTextarea" name="job[notes]" placeholder="Notes" rows="5"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <legend>Contact</legend>
+                    <input type="text" class="form-control" name="job[contact]" placeholder="Submitted">
+                    </div>
+
+                    <div class="form-group">
+                      <legend>Applied</legend>
+                    <div class="form-group">
+                    <input type="text" class="form-control" id="update-jobAPPLIED" name="job[applied]" placeholder="Applied">
+                    </div>
+
+
+
+           </div>
+           <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" id="updateJob1" class="btn btn-success update-job-btn">Update job</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Delete Job Modal by id -->
+        <div class="modal fade" id="c-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Delete JOB</h4>
+              </div>
+              <div class="modal-body">
+                <form class="form-block " id="delete-job">
+
+                      <div class="form-group">
+                        <legend>ID</legend>
+                      <input type="text" class="form-control" id="delete-jobID" name="job[id]" placeholder="Id">
+                      </div>
+
+             <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="submit" id="deleteJob1" class="btn btn-success update-job-btn">Delete job</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Modal to update a job -->
+      <!-- <div class="modal fade" id="update-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
 
@@ -389,11 +488,11 @@
                  </div>
                </div>
              </div>
-           </div>
+           </div> -->
 
 
            <!-- Delete Job Modal -->
-           <div class="modal fade" id="delete-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+           <!-- <div class="modal fade" id="delete-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
              <div class="modal-dialog" role="document">
                <div class="modal-content">
                  <div class="modal-header">
@@ -408,7 +507,7 @@
                </div>
              </div>
            </div>
-           </div>
+           </div> -->
 
 
 

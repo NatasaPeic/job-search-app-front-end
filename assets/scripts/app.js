@@ -3,7 +3,7 @@
 
 
 const app = {
-  api:  'http://localhost:3000',
+  api:  'https://thawing-spire-40526.herokuapp.com/',
 };
 
 module.exports = app;

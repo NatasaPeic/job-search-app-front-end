@@ -23,8 +23,8 @@ let displayJobs = function(jobs){
 
   // remove all the content table, so you don't get your backend info twice
    $('.table').empty();
-  // then append it all
-  $('.table').html(jobListingTemplate({
+  // change context in table, all
+  $('.table').append(jobListingTemplate({
 
   // debugger;
     jobs
@@ -124,7 +124,7 @@ this.reset();
 // Sign in
 const signInSuccess = (data) => {
   app.user = data.user;
-  console.log(app);
+  console.log(app.user);
   console.log("User is signed in!");
 
 
@@ -133,6 +133,7 @@ const signInSuccess = (data) => {
     $(".modal-backdrop").hide();
 
     $('#sign-in-modal-link').hide();
+      $('#c-job-modal-link').show();
 
 
 

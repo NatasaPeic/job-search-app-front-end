@@ -68,24 +68,25 @@ const getJobs = (success, failure) => {
 };
 
 
-const updateJob = (success, failure, data, job_id) => {
+const updateJob = (success, failure, data, id) => {
 
   $.ajax({
     method: "PATCH",
-    url: app.api + '/jobs/' + job_id,
-    data,
+    url: app.api + '/jobs/' + id,
     headers: {
       Authorization: 'Token token='+ app.user.token,
     },
+    data,
   })
   .done(success)
   .fail(failure);
+
 };
 
 
-const deleteJob = (success, failure, job_id) => {
+const deleteJob = (success, failure, id) => {
     $.ajax({
-      url: app.api + '/jobs/' + job_id,
+      url: app.api + '/jobs/' + id,
       method: 'DELETE',
       headers: {
         Authorization: 'Token token=' + app.user.token,
@@ -96,6 +97,35 @@ const deleteJob = (success, failure, job_id) => {
   };
 
 
+
+  // code for better visual representation
+  // const deleteJob = (success, failure, job_id) => {
+  //     $.ajax({
+  //       url: app.api + '/jobs/' + job_id,
+  //       method: 'DELETE',
+  //       headers: {
+  //         Authorization: 'Token token=' + app.user.token,
+  //       },
+  //     })
+  //     .done(success)
+  //     .fail(failure);
+  //   };
+  //
+
+  // code for better visual representation
+  // const updateJob = (success, failure, data, job_id) => {
+  //
+  //   $.ajax({
+  //     method: "PATCH",
+  //     url: app.api + '/jobs/' + job_id,
+  //     data,
+  //     headers: {
+  //       Authorization: 'Token token='+ app.user.token,
+  //     },
+  //   })
+  //   .done(success)
+  //   .fail(failure);
+  // };
 
 
 module.exports = {
