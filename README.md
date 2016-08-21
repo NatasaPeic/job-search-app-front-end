@@ -26,7 +26,7 @@ User can also delete the entire job field if job is no longer active.
 
 2. As a user, I want to be able to create new position, so I keep the track of the applications I’m interested in.
 
-3.As a user, I want to update my job position once I submit an application.
+3. As a user, I want to update my job position once I submit an application.
 
 
 # Wireframes
