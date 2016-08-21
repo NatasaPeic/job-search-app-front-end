@@ -40,6 +40,7 @@ webpackJsonp([0],[
 	// on document ready
 	$(function () {
 	  authEvents.addHandlers();
+	  // debugger;
 
 	  $('#createJob, #updateJob, #deleteJob, #change-password-modal-link, #change-password-modal-link, #sign-out-modal-link, .content, #create-job-modal-link, #update-job-modal-link, #sign-in-modal-link, #delete-job-modal-link, #update-job-modal-link, #c-job-modal-link, #table').hide();
 	});
