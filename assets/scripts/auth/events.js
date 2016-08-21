@@ -68,6 +68,7 @@ const showChangePasswordModal = function showChangePasswordModal(){
 
 const closeModalChangePassword = function closeModalChangePassword() {
     $('#change-password-modal').modal('hide');
+      
 };
 
 const onChangePassword = function(event) {
@@ -129,8 +130,7 @@ const onCreateJobs = function(event) {
 
 
 
-// me trying
-
+// update job
 const showUpdateJobModal = function showUpdateJobModal(){
   $('#update-job-modal').modal('show');
 };
@@ -154,7 +154,7 @@ const onUpdateJobs = function(event) {
 
 
 
-// me trying
+// delete
 const showDeleteJobModal = function showDeleteJobModal(){
   $('#c-job-modal').modal('show');
 };
@@ -162,7 +162,6 @@ const showDeleteJobModal = function showDeleteJobModal(){
 const closeDeleteJobModal = function closeDeleteJobModal() {
     $('#c-job-modal').modal('hide');
 };
-
 
 
 const onDeleteJobs = function(event) {
@@ -228,47 +227,6 @@ const addHandlers = () => {
 
 
 
-
-
-
-
-
-
-
-
-// correct code
-    // triggers event on submit, submit (handler)
-    //updates the specific job once a submission event occurs
-//   $('#update-job').on('submit', function (event) {
-//     event.preventDefault();
-//     let id = $(".update-job-btn").attr("data-job-id");
-//     let data = getFormFields(this);
-//     // debugger;
-//     api.updateJob(ui.updateJobSuccess, ui.failure, data, id);
-//   });
-//
-//   //adds a job id to the submit button
-//   $('.table').on('click', '.update-job', function(event){
-//     event.preventDefault();
-//     let id = $(event.target).attr("data-job-id");
-//     $(".update-job-btn").attr("data-job-id", id);
-// });
-
-//
-//
-//
-// $('.delete-job-btn').on('click', function (event) {
-//    event.preventDefault();
-//    let id = $(this).attr("data-job-id");
-//    api.deleteJob(ui.deleteJobSuccess, ui.failure, id);
-//  });
-//
-// //adds a job id to the submit button
-// $('.table').on('click', '.delete-job', function(event){
-// event.preventDefault();
-// let id = $(event.target).attr("data-job-id");
-// $(".delete-job-btn").attr("data-job-id", id);
-// });
 
 
 };

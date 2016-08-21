@@ -98,34 +98,6 @@ const deleteJob = (success, failure, id) => {
 
 
 
-  // code for better visual representation
-  // const deleteJob = (success, failure, job_id) => {
-  //     $.ajax({
-  //       url: app.api + '/jobs/' + job_id,
-  //       method: 'DELETE',
-  //       headers: {
-  //         Authorization: 'Token token=' + app.user.token,
-  //       },
-  //     })
-  //     .done(success)
-  //     .fail(failure);
-  //   };
-  //
-
-  // code for better visual representation
-  // const updateJob = (success, failure, data, job_id) => {
-  //
-  //   $.ajax({
-  //     method: "PATCH",
-  //     url: app.api + '/jobs/' + job_id,
-  //     data,
-  //     headers: {
-  //       Authorization: 'Token token='+ app.user.token,
-  //     },
-  //   })
-  //   .done(success)
-  //   .fail(failure);
-  // };
 
 
 module.exports = {

@@ -1,35 +1,19 @@
-  <!-- I can't overwrite damn Bootstrap styleshes, so I had to use inline td styling -->
 
-<tr class="table-top-row">
-  <td style="padding:10px; width: 150px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">ID</td>
-  <td style="padding:10px; width: 150px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">Position</td>
-  <td style="padding:10px; width: 150px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">Company</td>
-  <td style="padding:10px; width: 150px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">Company URL</td>
-  <td style="padding:10px; width: 250px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">Requirements</td>
-  <td style="padding:10px; width: 150px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">Salary  (K)</td>
-  <td style="padding:10px; width: 150px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">Application URL</td>
-  <td style="padding:10px; width: 150px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">Notes</td>
-  <td style="padding:10px; width: 150px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">Submitted</td>
-  <td style="padding:10px; width: 150px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">Contact</td>
-  <!-- code for better visual representation -->
-  <!-- <td style="padding:10px; width: 100px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">DELETE JOB</td> -->
-  <!-- <td style="padding:10px; width: 100px; background-color: #264d00; color: white; font-size: 20px; font-family: inherit; ">UPDATE JOB</td> -->
 
-</tr>
+     {{> partial}}
 
-<tr class="table-top-row">
-
-     <!-- {{#each this}} -->
+     {{#each this}}
      {{#each jobs}}
+
 
   <tr>
     <td style="padding:10px;">{{this.id}}</td>
     <td style="padding:10px;">{{this.company_name}}</td>
     <td style="padding:10px;">{{this.position_name}}</td>
     <td style="padding:10px;"><a href="{{this.company_url}}" target="_blank">{{this.company_url}}</a></td>
+    <td style="padding:10px;"><a href="{{this.application_url}}" target="_blank">{{this.application_url}}</td>
     <td style="padding:10px;">{{this.requirements}}</td>
     <td style="padding:10px;">{{this.salary}}</td>
-    <td style="padding:10px;"><a href="{{this.application_url}}" target="_blank">{{this.application_url}}</td>
     <td style="padding:10px;">{{this.notes}}</td>
     <td style="padding:10px;">{{this.applied}}</td>
     <td style="padding:10px;">{{this.contact}}</td>
@@ -38,5 +22,6 @@
     <!-- <td><button type="button" class="btn btn-warning delete-job" data-job-id="{{id}}" data-toggle="modal" data-target="#delete-job-modal">Delete</button></td> -->
 
   </tr>
+
   {{/each}}
-<!-- {{/each}} -->
+{{/each}}

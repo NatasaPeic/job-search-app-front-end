@@ -5,22 +5,62 @@
  */
 
 body {
-    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 30px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
-td, th{
-    border: 2px solid  #595959;
-    text-align: center;
-}
-
-tr {
+table {
+  width: 100%;
+  border-collapse: collapse;
   text-align: center;
 }
 
-table {
-  border-radius: 10px;
+/* Zebra striping */
+tr:nth-of-type(odd) {
+  background: #F5F6CE;
 }
+
+th {
+  background: #333;
+  color: #cc9900;
+  font-weight: bold;
+}
+td, th {
+
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+tr td:first-child {background: #D68910;
+                   font-weight:bold;
+                   color:white;}
+
+
+p {
+    margin: 0 0 10px;
+    line-height: 30px;
+    font-size: 18px;
+    text-align: inherit;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .business-header {
+    display: none;
+
+    }
+
+
+    .table {
+      display: block;
+      float: left;
+		overflow-y: hidden;
+
+    }
+  }
+
 
 .table-top-row {
 font-weight: bold;
@@ -53,14 +93,4 @@ font-weight: bold;
 
 footer {
     margin: 50px 0;
-}
-
-td, th {
-  padding: 20px;
-}
-
-@media (max-width: 765px) {
-  .business-header {
-    display: none;
-  }
 }
