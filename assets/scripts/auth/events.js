@@ -68,7 +68,7 @@ const showChangePasswordModal = function showChangePasswordModal(){
 
 const closeModalChangePassword = function closeModalChangePassword() {
     $('#change-password-modal').modal('hide');
-      
+
 };
 
 const onChangePassword = function(event) {
