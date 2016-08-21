@@ -403,7 +403,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  api: 'https://thawing-spire-40526.herokuapp.com/'
+	  api: 'https://thawing-spire-40526.herokuapp.com'
 	};
 
 	module.exports = app;
