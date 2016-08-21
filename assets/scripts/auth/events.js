@@ -225,10 +225,6 @@ const addHandlers = () => {
     $('#delete-job').on('submit', onDeleteJobs);
     $('#deleteJob1').on('click', closeDeleteJobModal);
 
-
-
-
-
 };
 
 
