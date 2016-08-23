@@ -39,9 +39,7 @@ https://classic.moqups.com/peic.natasa@gmail.com/77a4JFu3/p:afedb0a59
 
 # Technologies used
 
-- Ruby,
-- Rails,
-- PostgreSQL,
+
 - JavaScript,
 - jQuery,
 - AJAX,
