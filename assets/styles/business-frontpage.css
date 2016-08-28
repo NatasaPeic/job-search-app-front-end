@@ -20,11 +20,12 @@ tr:nth-of-type(odd) {
   background: #F5F6CE;
 }
 
-th {
+/*th {
   background: #333;
   color: #cc9900;
   font-weight: bold;
-}
+}*/
+
 td, th {
 
   padding: 6px;
@@ -32,9 +33,11 @@ td, th {
   text-align: center;
 }
 
-tr td:first-child {background: #D68910;
-                   font-weight:bold;
-                   color:white;}
+/*tr td:first-child {
+  background: #D68910;
+  font-weight:bold;
+  color:white;
+  }*/
 
 
 p {

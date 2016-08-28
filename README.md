@@ -4,7 +4,7 @@
 
 Back end: https://github.com/NatasaPeic/job-search-app-back-end
 
-Link to live-application:
+Link to live-application: https://natasapeic.github.io/job-search-app-front-end
 
 
 Job Search Helper app helps people be more efficient in a job search. It creates an extra step in job search by separating process of searching and process of applying for jobs.
@@ -39,9 +39,7 @@ https://classic.moqups.com/peic.natasa@gmail.com/77a4JFu3/p:afedb0a59
 
 # Technologies used
 
-- Ruby,
-- Rails,
-- PostgreSQL,
+
 - JavaScript,
 - jQuery,
 - AJAX,

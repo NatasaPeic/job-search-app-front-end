@@ -155,13 +155,13 @@ const onUpdateJobs = function(event) {
 
 
 // delete
-const showDeleteJobModal = function showDeleteJobModal(){
-  $('#c-job-modal').modal('show');
-};
-
-const closeDeleteJobModal = function closeDeleteJobModal() {
-    $('#c-job-modal').modal('hide');
-};
+// const showDeleteJobModal = function showDeleteJobModal(){
+//   $('#c-job-modal').modal('show');
+// };
+//
+// const closeDeleteJobModal = function closeDeleteJobModal() {
+//     $('#c-job-modal').modal('hide');
+// };
 
 
 const onDeleteJobs = function(event) {
@@ -217,18 +217,46 @@ const addHandlers = () => {
     $('#createJob1').on('click', closeCreateJobModal);
 
 
-    $('#update-job-modal-link').on('click', showUpdateJobModal);
-    $('#update-job').on('submit', onUpdateJobs);
-    $('#updateJob1').on('click', closeUpdateJobModal);
 
-    $('#c-job-modal-link').on('click', showDeleteJobModal);
-    $('#delete-job').on('submit', onDeleteJobs);
-    $('#deleteJob1').on('click', closeDeleteJobModal);
+      // triggers event on submit, submit (handler)
+      // updates the specific job once a submission event occurs
+        $('#update-job').on('submit', function (event) {
+          event.preventDefault();
+          let id = $(".update-job-btn").attr("data-job-id");
+          let data = getFormFields(this);
+          // debugger;
+          api.updateJob(ui.updateJobSuccess, ui.failure, data, id);
+        });
+
+        //adds a job id to the submit button
+        $('.table').on('click', '.update-job', function(event){
+          event.preventDefault();
+          let id = $(event.target).attr("data-job-id");
+          $(".update-job-btn").attr("data-job-id", id);
+          $("#update-job-modal").hide();
+      });
+
+
+
+
+        $('.delete-job-btn').on('click', function (event) {
+           event.preventDefault();
+           let id = $(this).attr("data-job-id");
+           api.deleteJob(ui.deleteJobSuccess, ui.failure, id);
+         });
+
+        //adds a job id to the submit button
+        $('.table').on('click', '.delete-job', function(event){
+        event.preventDefault();
+        let id = $(event.target).attr("data-job-id");
+        $(".delete-job-btn").attr("data-job-id", id);
+        });
+
 
 };
 
 
-
 module.exports = {
   addHandlers,
+  onDeleteJobs
 };
