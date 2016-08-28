@@ -233,8 +233,12 @@ const addHandlers = () => {
           event.preventDefault();
           let id = $(event.target).attr("data-job-id");
           $(".update-job-btn").attr("data-job-id", id);
-          $("#update-job-modal").hide();
       });
+
+         $(".update-job-btn").on('click', function () {
+              $("#update-job-modal").hide();
+                $(".modal-backdrop").hide();
+         });
 
 
 
