@@ -135,8 +135,11 @@ const signInSuccess = (data) => {
     $('#sign-in-job-modal').modal('hide');
     $(".modal-backdrop").hide();
 
-    $('#sign-in-modal-link').hide();
-      $('#c-job-modal-link, #table').show();
+    $('#sign-in-modal-link, #update-job-modal-link').hide();
+    // before refactoring
+    // $('#c-job-modal-link, #table').show();
+
+    $('#change-password-modal-link, sign-out-modal-link').show();
 
 
   // reset form fields

@@ -68,33 +68,34 @@ const getJobs = (success, failure) => {
 };
 
 
-const updateJob = (success, failure, data, id) => {
 
-  $.ajax({
-    method: "PATCH",
-    url: app.api + '/jobs/' + id,
-    headers: {
-      Authorization: 'Token token='+ app.user.token,
-    },
-    data,
-  })
-  .done(success)
-  .fail(failure);
-
-};
+  const deleteJob = (success, failure, job_id) => {
+      $.ajax({
+        url: app.api + '/jobs/' + job_id,
+        method: 'DELETE',
+        headers: {
+          Authorization: 'Token token=' + app.user.token,
+        },
+      })
+      .done(success)
+      .fail(failure);
+    };
 
 
-const deleteJob = (success, failure, id) => {
+  const updateJob = (success, failure, data, job_id) => {
+
     $.ajax({
-      url: app.api + '/jobs/' + id,
-      method: 'DELETE',
+      method: "PATCH",
+      url: app.api + '/jobs/' + job_id,
+      data,
       headers: {
-        Authorization: 'Token token=' + app.user.token,
+        Authorization: 'Token token='+ app.user.token,
       },
     })
     .done(success)
     .fail(failure);
   };
+
 
 
 
