@@ -229,7 +229,11 @@ webpackJsonp([0],[
 	    event.preventDefault();
 	    var id = $(event.target).attr("data-job-id");
 	    $(".update-job-btn").attr("data-job-id", id);
+	  });
+
+	  $(".update-job-btn").on('click', function () {
 	    $("#update-job-modal").hide();
+	    $(".modal-backdrop").hide();
 	  });
 
 	  $('.delete-job-btn').on('click', function (event) {
